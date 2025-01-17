@@ -8,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-       /* Updated Reset & General Styles */
+        /* Updated Reset & General Styles */
         body, h1, h2, h3, p, ul, li, a, button, input, textarea {
             margin: 0;
             padding: 0;
@@ -16,11 +16,22 @@
         }
         body { font-family: 'Roboto', sans-serif; line-height: 1.6; background-color: #f9f9f9; color: #333; }
         .container { width: 90%; max-width: 1200px; margin: 20px auto; padding: 20px; background-color: #fff; border-radius: 12px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08); }
-        header { background-color: #111; color: #fff; padding: 20px 0; }
+        header { background-color: #fff; color: #333; padding: 20px 0;  border-bottom: 1px solid #eee;}
         nav { display: flex; justify-content: space-between; align-items: center; width: 90%; max-width: 1200px; margin: 0 auto; }
-        nav a { color: #fff; text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.3s; }
-        nav a:hover { color: #ddd; }
-         nav .logo { font-size: 1.75rem; font-weight: 700; letter-spacing: 1px;}
+        nav a { color: #333; text-decoration: none; margin: 0 15px; font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: #666; }
+         nav .logo {
+            font-size: 1.75rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+        }
+        nav .logo img {
+            height: 30px;
+             margin-right: 10px;
+        }
+
         .notification {
             background-color: #4caf50; color: white; padding: 10px;
             text-align: center; position: fixed; top: 10px; left: 50%; transform: translateX(-50%);
@@ -32,6 +43,46 @@
         margin-top: 5px;
          display:block;
       }
+
+        /* Navigation Dropdown */
+        nav .nav-links {
+          display: flex;
+        }
+
+        nav .nav-links .nav-item {
+          position: relative;
+         }
+          nav .nav-links .nav-item:hover .dropdown {
+            display: block;
+             opacity: 1;
+            transform: translateY(0);
+          }
+        nav .nav-links .dropdown {
+          position: absolute;
+           top: 100%;
+            left: 0;
+            background-color: #fff;
+            padding: 15px 0;
+              border: 1px solid #ddd;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            display: none;
+            white-space: nowrap;
+           z-index: 10;
+          opacity: 0;
+            transform: translateY(10px);
+          transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+          nav .nav-links .dropdown a {
+            display: block;
+            padding: 10px 20px;
+            white-space: nowrap;
+          }
+
+          nav .nav-links .dropdown a:hover {
+              background-color: #f5f5f5;
+              color: #333;
+          }
         /* Form Styles (Improved) */
         form {
             display: flex; flex-direction: column; margin-top: 20px;
@@ -47,6 +98,333 @@
             padding: 12px 20px; background-color: #111; color: #fff; border: none; border-radius: 6px;
             cursor: pointer; font-size: 1em; transition: background-color 0.3s; }
         form button:hover { background-color: #333; }
+
+        /* Hero Section Style */
+        .hero-section {
+            position: relative;
+             overflow: hidden;
+            margin-bottom: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+            }
+
+       .hero-section img {
+            display: block;
+            width: 100%;
+            height: auto;
+         }
+
+        .hero-section .overlay-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: #fff;
+           text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+         .hero-section .overlay-text h2 {
+            font-size: 3rem;
+              margin-bottom: 10px;
+            font-weight: 700;
+             text-transform: uppercase;
+        }
+
+           .hero-section .overlay-text p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+         .hero-section .overlay-text .kobe {
+            font-size: 1rem;
+            font-weight: normal;
+             text-transform: uppercase;
+            position:absolute;
+              bottom: -10px;
+            left:0;
+            right: 0;
+               text-align: center;
+               margin: 0 auto;
+        }
+           /* Trending Section Style */
+
+        .trending-section {
+              padding: 20px 0;
+        }
+
+       .trending-section h2 {
+            font-size: 1.7em;
+            margin-bottom: 15px;
+        }
+        .trending-section .trending-items {
+             display: flex;
+            justify-content: space-around;
+            gap: 15px;
+        }
+
+        .trending-section .trending-item {
+            flex: 1;
+             min-width: 250px;
+          max-width: 400px;
+         }
+
+        .trending-section .trending-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+           }
+             /* Classics Spotlight Style */
+
+       .classics-spotlight {
+          padding: 20px 0;
+       }
+
+        .classics-spotlight h2 {
+            font-size: 1.7em;
+              margin-bottom: 15px;
+        }
+
+        .carousel {
+            position: relative;
+           overflow: hidden;
+        }
+
+        .carousel-items {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .carousel-item {
+            flex: 0 0 auto;
+             min-width: 200px;
+           max-width: 250px;
+            padding: 0 10px;
+        }
+         .carousel-item img {
+            display: block;
+            width: 100%;
+            height: auto;
+           border-radius: 8px;
+           }
+           .carousel-item h3 {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .carousel-control {
+           position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+               font-size: 1.3em;
+            user-select: none;
+            transition: background-color 0.3s;
+           }
+        .carousel-control:hover {
+                background: #eee;
+          }
+        .carousel-prev {
+             left: 5px;
+           }
+         .carousel-next {
+            right: 5px;
+        }
+
+      /* Don't Miss Style */
+         .dont-miss {
+            padding: 20px 0;
+            position: relative;
+        }
+
+       .dont-miss img {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+           }
+        .dont-miss .overlay-text {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            color: #fff;
+           text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+        }
+         .dont-miss .overlay-text h2 {
+            font-size: 3rem;
+              margin-bottom: 10px;
+            font-weight: 700;
+             text-transform: uppercase;
+        }
+
+           .dont-miss .overlay-text p {
+            font-size: 1.1rem;
+        }
+
+           /* Shop By Sport Section */
+
+          .shop-by-sport {
+           padding: 20px 0;
+         }
+
+        .shop-by-sport h2 {
+           font-size: 1.7em;
+            margin-bottom: 15px;
+        }
+
+         .sport-carousel {
+          position: relative;
+          overflow: hidden;
+         }
+
+        .sport-carousel-items {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .sport-carousel-item {
+           flex: 0 0 auto;
+            min-width: 200px;
+          max-width: 300px;
+            padding: 0 10px;
+        }
+         .sport-carousel-item img {
+             display: block;
+            width: 100%;
+           height: auto;
+            border-radius: 8px;
+            filter: grayscale(100%)
+         }
+          .sport-carousel-item h3 {
+              margin-top: 10px;
+              text-align: center;
+         }
+           /* Member Benefits Section */
+           .member-benefits {
+              padding: 20px 0;
+        }
+
+        .member-benefits h2 {
+             font-size: 1.7em;
+            margin-bottom: 15px;
+       }
+        .member-benefits .member-items {
+             display: flex;
+            justify-content: space-around;
+             gap: 15px;
+        }
+
+        .member-benefits .member-item {
+            flex: 1;
+             min-width: 250px;
+          max-width: 400px;
+          position:relative;
+
+        }
+        .member-benefits .member-item img {
+            display: block;
+           width: 100%;
+            height: auto;
+            border-radius: 8px;
+         }
+           .member-benefits .member-item .overlay-text {
+             position: absolute;
+             bottom: 10px;
+               left: 10px;
+            color: #fff;
+           text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+           }
+
+           /* Footer styles */
+           footer {
+             background: #f0f0f0;
+              padding: 20px 0;
+             font-size: 0.9em;
+             color: #555;
+             border-top: 1px solid #ddd;
+          }
+           footer .footer-container {
+             width: 90%;
+             max-width: 1200px;
+             margin: 0 auto;
+             display: flex;
+             flex-wrap: wrap;
+            justify-content: space-between;
+            }
+
+        footer .site-map {
+            flex: 1;
+             min-width: 200px;
+             max-width: 400px;
+           }
+
+        footer .site-map ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        footer .site-map ul li {
+              margin-bottom: 5px;
+          }
+
+        footer .site-map h3 {
+            font-size: 1.2em;
+             margin-bottom: 10px;
+           }
+         footer .resources {
+              flex: 1;
+            min-width: 150px;
+            max-width: 250px;
+        }
+          footer .resources h3 {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+           }
+           footer .resources ul {
+              list-style: none;
+               padding: 0;
+         }
+           footer .resources ul li {
+             margin-bottom: 5px;
+          }
+           footer .help {
+               flex: 1;
+            min-width: 150px;
+             max-width: 250px;
+            }
+          footer .help h3 {
+            font-size: 1.2em;
+             margin-bottom: 10px;
+           }
+             footer .help ul {
+             list-style: none;
+            padding: 0;
+         }
+          footer .help ul li {
+              margin-bottom: 5px;
+          }
+          footer .company {
+              flex: 1;
+             min-width: 150px;
+            max-width: 250px;
+          }
+          footer .company h3 {
+             font-size: 1.2em;
+             margin-bottom: 10px;
+          }
+             footer .company ul {
+             list-style: none;
+            padding: 0;
+         }
+          footer .company ul li {
+                margin-bottom: 5px;
+          }
         /* Products Layout (Enhanced) */
         .products { display: flex; flex-wrap: wrap; justify-content: space-around; }
         .product-card {
@@ -95,14 +473,32 @@
 <body>
     <header>
         <nav>
-            <div class="logo">Nike (Enhanced)</div>
-            <div>
-                <a href="/" id="home-link">Home</a>
-                <a href="/products" id="products-link">Products</a>
-                <a href="/cart" id="cart-link">Cart</a>
-                  <a href="/profile" id="profile-link">Profile</a>
-                <a href="/login" id="login-link">Login</a>
+            <div class="logo">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a6/Nike_Swoosh_Logo_Black.svg/800px-Nike_Swoosh_Logo_Black.svg.png" alt="Nike Logo"/>
+              Nike (Enhanced)
             </div>
+              <div class="nav-links">
+                  <div class="nav-item">
+                    <a href="/" id="home-link">Home</a>
+                  </div>
+                    <div class="nav-item">
+                      <a href="/products" id="products-link">Products</a>
+                      <div class="dropdown">
+                        <a href="#">Featured</a>
+                        <a href="#">New Arrivals</a>
+                         <a href="#">Best Sellers</a>
+                      </div>
+                   </div>
+                   <div class="nav-item">
+                         <a href="/cart" id="cart-link">Cart</a>
+                   </div>
+                      <div class="nav-item">
+                       <a href="/profile" id="profile-link">Profile</a>
+                   </div>
+                    <div class="nav-item">
+                        <a href="/login" id="login-link">Login</a>
+                  </div>
+              </div>
         </nav>
     </header>
     <div class="notification" id="notification-area"></div>
@@ -110,8 +506,92 @@
       <!-- Page-specific content will load here-->
         <div id="content-area"></div>
     </div>
+
+     <footer>
+      <div class="footer-container">
+        <div class="site-map">
+          <h3>Icons</h3>
+          <ul>
+             <li><a href="#">Air Force 1</a></li>
+            <li><a href="#">Waffle</a></li>
+             <li><a href="#">Air Max 90</a></li>
+              <li><a href="#">Air Max 95</a></li>
+               <li><a href="#">Air Max 97</a></li>
+                <li><a href="#">Air Max 270</a></li>
+                 <li><a href="#">All Air Max</a></li>
+                 <li><a href="#">VaporMax</a></li>
+
+          </ul>
+             <h3>Shoes</h3>
+          <ul>
+             <li><a href="#">All Shoes</a></li>
+            <li><a href="#">Custom Shoes</a></li>
+             <li><a href="#">Jordan Shoes</a></li>
+              <li><a href="#">Running Shoes</a></li>
+               <li><a href="#">Basketball Shoes</a></li>
+                <li><a href="#">Football Shoes</a></li>
+                 <li><a href="#">Gym & Training Shoes</a></li>
+                 <li><a href="#">Lifestyle Shoes</a></li>
+          </ul>
+          <h3>Clothing</h3>
+          <ul>
+             <li><a href="#">All Clothing</a></li>
+            <li><a href="#">Modest Wear</a></li>
+             <li><a href="#">Hoodies & Pullovers</a></li>
+              <li><a href="#">Shirts & Tops</a></li>
+               <li><a href="#">Jackets</a></li>
+                <li><a href="#">Compression & Nike Pro</a></li>
+                 <li><a href="#">Trousers & Leggings</a></li>
+                  <li><a href="#">Shorts</a></li>
+          </ul>
+
+           <h3>Kids</h3>
+            <ul>
+             <li><a href="#">Infant & Toddler Shoes</a></li>
+            <li><a href="#">Kids' Shoes</a></li>
+             <li><a href="#">Kids' Jordan Shoes</a></li>
+              <li><a href="#">Kids' Basketball Shoes</a></li>
+               <li><a href="#">Kids' Running Shoes</a></li>
+                <li><a href="#">Kids' Clothing</a></li>
+                 <li><a href="#">Kids' Backpacks</a></li>
+                  <li><a href="#">Kids' Socks</a></li>
+          </ul>
+        </div>
+           <div class="resources">
+            <h3>Resources</h3>
+               <ul>
+                    <li><a href="#">Find A Store</a></li>
+                      <li><a href="#">Become a Member</a></li>
+                     <li><a href="#">Send Us Feedback</a></li>
+               </ul>
+         </div>
+        <div class="help">
+           <h3>Help</h3>
+            <ul>
+                <li><a href="#">Get Help</a></li>
+                 <li><a href="#">Order Status</a></li>
+                  <li><a href="#">Delivery</a></li>
+                   <li><a href="#">Returns</a></li>
+                    <li><a href="#">Payment Options</a></li>
+                     <li><a href="#">Contact Us On Nike.com Inquiries</a></li>
+                       <li><a href="#">Contact Us On All Other Inquiries</a></li>
+            </ul>
+        </div>
+          <div class="company">
+            <h3>Company</h3>
+               <ul>
+                 <li><a href="#">About Nike</a></li>
+                   <li><a href="#">News</a></li>
+                    <li><a href="#">Careers</a></li>
+                     <li><a href="#">Investors</a></li>
+                      <li><a href="#">Sustainability</a></li>
+                       <li><a href="#">Report a Concern</a></li>
+               </ul>
+            </div>
+      </div>
+      </footer>
     <script>
-         const API_BASE_URL = "http://localhost:5000"; // Adjust as needed
+        const API_BASE_URL = "http://localhost:5000"; // Adjust as needed
 
         // Define route handlers in a single file for demonstration
         const routes = {
@@ -230,15 +710,187 @@
             displayShoppingCartPage();
         }
 
+
+        // Function to handle carousel movement
+       function moveCarousel(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            const carouselItems = carousel.querySelector(".carousel-items");
+            const items = carouselItems.querySelectorAll(".carousel-item");
+            const itemWidth = items[0].offsetWidth;
+            const visibleItems = Math.round(carousel.offsetWidth / itemWidth);
+
+             let currentPosition = parseInt(getComputedStyle(carouselItems).transform.split(',')[4]) || 0;
+           if(direction === 'next'){
+                if(currentPosition > -itemWidth * (items.length - visibleItems)){
+                  currentPosition -= itemWidth;
+                 } else {
+                       currentPosition = 0
+                 }
+           } else {
+            if (currentPosition < 0 ) {
+                currentPosition += itemWidth;
+             } else {
+                  currentPosition = -itemWidth * (items.length - visibleItems)
+            }
+        }
+             carouselItems.style.transform = `translateX(${currentPosition}px)`
+        }
        // Route handlers for pages, will load HTML into the content-area
         function displayHomePage() {
           document.getElementById("content-area").innerHTML = `
-            <section>
-                <h2>Welcome to Nike (Enhanced)</h2>
-                <p>Explore our latest collection of sports apparel and footwear.</p>
-                 <p><em>Note: This is a demo. No real persistence!</em></p>
-                <img src="https://placehold.co/600x250" alt="Banner Image"/>
-            </section>
+              <div class="hero-section">
+                 <img src="https://placehold.co/1200x400" alt="Hero Image"/>
+                 <div class="overlay-text">
+                   <h2>Have A Hard Year</h2>
+                    <p>This is text description or paragraph here.</p>
+                    <p class="kobe">Kobe</p>
+                 </div>
+              </div>
+               <div class="trending-section">
+                <h2>Trending</h2>
+                   <div class="trending-items">
+                     <div class="trending-item">
+                         <img src="https://placehold.co/400x300" alt="Trend 1"/>
+                     </div>
+                     <div class="trending-item">
+                         <img src="https://placehold.co/400x300" alt="Trend 2"/>
+                     </div>
+                    <div class="trending-item">
+                          <img src="https://placehold.co/400x300" alt="Trend 3"/>
+                    </div>
+                  </div>
+              </div>
+               <div class="classics-spotlight">
+                  <h2>Classics Spotlight</h2>
+                   <div class="carousel" id="classics-carousel">
+                      <div class="carousel-items">
+                           <div class="carousel-item">
+                               <img src="https://placehold.co/250x150" alt="Shoe 1">
+                               <h3>Air Max 1</h3>
+                           </div>
+                            <div class="carousel-item">
+                               <img src="https://placehold.co/250x150" alt="Shoe 2">
+                               <h3>Air Max DN</h3>
+                           </div>
+                           <div class="carousel-item">
+                                <img src="https://placehold.co/250x150" alt="Shoe 3">
+                               <h3>Air Max 90</h3>
+                            </div>
+                           <div class="carousel-item">
+                                <img src="https://placehold.co/250x150" alt="Shoe 4">
+                                <h3>Cortez</h3>
+                            </div>
+                           <div class="carousel-item">
+                                <img src="https://placehold.co/250x150" alt="Shoe 5">
+                                <h3>Killshot</h3>
+                            </div>
+                           <div class="carousel-item">
+                                <img src="https://placehold.co/250x150" alt="Shoe 6">
+                               <h3>Pegasus 41</h3>
+                           </div>
+                             <div class="carousel-item">
+                                <img src="https://placehold.co/250x150" alt="Shoe 7">
+                               <h3>Vomero</h3>
+                            </div>
+                      </div>
+                       <div class="carousel-control carousel-prev" onclick="moveCarousel('classics-carousel', 'prev')">❮</div>
+                        <div class="carousel-control carousel-next" onclick="moveCarousel('classics-carousel', 'next')">❯</div>
+                 </div>
+              </div>
+              <div class="dont-miss">
+                 <img src="https://placehold.co/1200x300" alt="Don't Miss Video"/>
+                  <div class="overlay-text">
+                      <h2>Built To Be Different</h2>
+                       <p>Unleash your explosive game with more stability and new Air cushioning.</p>
+                  </div>
+              </div>
+               <div class="shop-by-sport">
+                  <h2>Shop By Sport</h2>
+                     <div class="sport-carousel" id="sport-carousel">
+                        <div class="sport-carousel-items">
+                             <div class="sport-carousel-item">
+                                 <img src="https://placehold.co/300x200" alt="Running"/>
+                                  <h3>Running</h3>
+                             </div>
+                             <div class="sport-carousel-item">
+                                 <img src="https://placehold.co/300x200" alt="Football"/>
+                                 <h3>Football</h3>
+                           </div>
+                             <div class="sport-carousel-item">
+                                 <img src="https://placehold.co/300x200" alt="Basketball"/>
+                                  <h3>Basketball</h3>
+                            </div>
+                         </div>
+                         <div class="carousel-control carousel-prev" onclick="moveCarousel('sport-carousel', 'prev')">❮</div>
+                                <div class="carousel-control carousel-next" onclick="moveCarousel('sport-carousel', 'next')">❯</div>
+                   </div>
+               </div>
+             <div class="member-benefits">
+                <h2>Member Benefits</h2>
+                   <div class="member-items">
+                     <div class="member-item">
+                         <img src="https://placehold.co/400x300" alt="Member Benefit 1"/>
+                          <div class="overlay-text">
+                            <h3>Member Product</h3>
+                             <p>Your Exclusive Access</p>
+                         </div>
+                     </div>
+                     <div class="member-item">
+                         <img src="https://placehold.co/400x300" alt="Member Benefit 2"/>
+                        <div class="overlay-text">
+                            <h3>Nike By You</h3>
+                             <p>Your Customisation Service</p>
+                          </div>
+                     </div>
+                    <div class="member-item">
+                          <img src="https://placehold.co/400x300" alt="Member Benefit 3"/>
+                           <div class="overlay-text">
+                            <h3>Member Rewards</h3>
+                            <p>How We Say Thank You</p>
+                         </div>
+                    </div>
+                  </div>
+              </div>
+           <br>
+             <h2>Our Products</h2>
+            <div class="products">
+                <div class="product-card">
+                  <img src="https://placehold.co/300x200/007bff/ffffff" alt="Shoe 1">
+                  <h3>Running Shoe</h3>
+                  <p>$100.00</p>
+                  <button onclick="addToCart(1)">Add to Cart</button>
+                  <a style="display:block; text-decoration: underline; margin-top: 5px;" onclick="changePage('/product/1')">View Details</a>
+                </div>
+                <div class="product-card">
+                  <img src="https://placehold.co/300x200/28a745/ffffff" alt="Shoe 2">
+                  <h3>Basketball Shoe</h3>
+                  <p>$120.00</p>
+                   <button onclick="addToCart(2)">Add to Cart</button>
+                    <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/2')">View Details</a>
+                </div>
+                <div class="product-card">
+                  <img src="https://placehold.co/300x200/dc3545/ffffff" alt="Shoe 3">
+                  <h3>Training Shoe</h3>
+                  <p>$150.00</p>
+                    <button onclick="addToCart(3)">Add to Cart</button>
+                      <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/3')">View Details</a>
+                </div>
+                <div class="product-card">
+                  <img src="https://placehold.co/300x200/ffc107/ffffff" alt="Apparel 1">
+                  <h3>Running Shirt</h3>
+                  <p>$60.00</p>
+                    <button onclick="addToCart(4)">Add to Cart</button>
+                      <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/4')">View Details</a>
+                 </div>
+                  <div class="product-card">
+                  <img src="https://placehold.co/300x200/17a2b8/ffffff" alt="Apparel 2">
+                  <h3>Training Shorts</h3>
+                  <p>$40.00</p>
+                    <button onclick="addToCart(5)">Add to Cart</button>
+                      <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/5')">View Details</a>
+                 </div>
+
+            </div>
           `;
         }
 
