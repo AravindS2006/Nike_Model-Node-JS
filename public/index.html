@@ -7,8 +7,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-         /* Updated Reset & General Styles */
+   <style>
+       /* Updated Reset & General Styles */
         body, h1, h2, h3, p, ul, li, a, button, input, textarea {
             margin: 0;
             padding: 0;
@@ -91,7 +91,14 @@
           }
          /* Form Styles (Improved) */
         form {
-            display: flex; flex-direction: column; margin-top: 20px;
+             margin: 20px auto;
+            width: 90%;
+             max-width: 500px;
+             padding: 20px;
+            background: #fff;
+           border-radius: 10px;
+             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+
         }
          form .form-group{ display:flex; flex-direction: column; margin-bottom: 15px;}
 
@@ -104,6 +111,15 @@
             padding: 12px 20px; background-color: #111; color: #fff; border: none; border-radius: 6px;
             cursor: pointer; font-size: 1em; transition: background-color 0.3s ease, opacity 0.3s ease; }
         form button:hover { background-color: #333; opacity: 0.8; }
+         .auth-page {
+           display: flex;
+           align-items: center;
+           justify-content: center;
+        }
+         .auth-page h2{
+             text-align: center;
+             margin-bottom: 20px;
+         }
 
         /* Hero Section Style */
        .hero-section {
@@ -558,7 +574,26 @@
         .product-details h2 { margin-bottom: 12px; font-size: 1.5em; }
         .product-details p { margin-bottom: 15px; line-height: 1.7; }
         .cart-items { list-style: none; padding: 0; }
-        .cart-items li { margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 12px; display: flex; align-items: center; justify-content: space-between; }
+         .cart-section {
+               display: flex;
+                 gap: 20px;
+           }
+            .cart-section .cart-items-container {
+                 flex: 2;
+                 }
+
+             .cart-section .cart-summary-container {
+                 flex: 1;
+                 background: #fff;
+                   border: 1px solid #eee;
+                padding: 20px;
+                 border-radius: 8px;
+            }
+
+           .cart-section .cart-items-container h2 {
+               margin-bottom: 20px;
+            }
+          .cart-items li { margin-bottom: 12px; border-bottom: 1px solid #eee; padding-bottom: 12px; display: flex; align-items: center; justify-content: space-between; }
         .cart-items li:last-child { border-bottom: none; }
         .cart-items span { font-weight: 500; }
         .cart-items input { width: 50px; padding: 6px; border: 1px solid #ddd; border-radius: 4px; margin: 0 5px;}
@@ -566,10 +601,92 @@
              background-color: #e74c3c; color: #fff; border: none; padding: 8px 12px; cursor: pointer;
              border-radius: 4px; transition: background-color 0.3s ease, opacity 0.3s ease; }
          .cart-items button:hover { background-color: #c0392b; opacity: 0.8; }
+         .cart-summary-container h2 {
+            margin-bottom: 15px;
+        }
+
+        .cart-summary-container p {
+           margin-bottom: 10px;
+          display: flex;
+         justify-content: space-between;
+            font-size: 1.1em;
+          }
+          .cart-summary-container p.total {
+               font-weight: 700;
+                 font-size: 1.2em;
+            }
+            .cart-summary-container button {
+                 display: block;
+                 width: 100%;
+                margin-bottom: 10px;
+              padding: 12px 20px; background-color: #111; color: #fff; border: none; border-radius: 6px;
+                cursor: pointer; font-size: 1em; transition: background-color 0.3s ease, opacity 0.3s ease;
+        }
+            .cart-summary-container button:hover { background-color: #333; opacity: 0.8; }
         #checkout-form label { display: block; margin-bottom: 7px; }
         #checkout-form input { width: 100%; padding: 10px; margin-bottom: 12px; border: 1px solid #ccc; border-radius: 6px; }
         #checkout-form button { background-color: #111; color: #fff; padding: 12px 20px; border: none; border-radius: 6px; cursor: pointer; transition: background-color 0.3s ease, opacity 0.3s ease; }
         #checkout-form button:hover { background-color: #333; opacity: 0.8; }
+            .cart-page .you-might-like {
+             padding: 20px 0;
+         }
+        .cart-page .you-might-like h2 {
+           font-size: 1.7em;
+             margin-bottom: 15px;
+         }
+       .cart-page .you-might-like .carousel {
+            position: relative;
+           overflow: hidden;
+        }
+
+        .cart-page .you-might-like .carousel-items {
+            display: flex;
+          transition: transform 0.5s ease;
+        }
+
+         .cart-page .you-might-like .carousel-item {
+            flex: 0 0 auto;
+             min-width: 200px;
+           max-width: 250px;
+            padding: 0 10px;
+             }
+          .cart-page .you-might-like .carousel-item img {
+            display: block;
+            width: 100%;
+           height: auto;
+           border-radius: 8px;
+           transition: transform 0.3s ease-in-out;
+           }
+             .cart-page .you-might-like .carousel-item:hover img {
+           transform: scale(1.05);
+           }
+            .cart-page .you-might-like .carousel-control {
+           position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+               font-size: 1.3em;
+            user-select: none;
+             transition: background-color 0.3s ease, opacity 0.3s ease;
+           }
+         .cart-page .you-might-like .carousel-control:hover {
+               background: #eee;
+               opacity: 0.8;
+          }
+            .cart-page .you-might-like .carousel-prev {
+             left: 5px;
+           }
+         .cart-page .you-might-like .carousel-next {
+            right: 5px;
+        }
     </style>
 
 </head>
@@ -694,7 +811,7 @@
       </div>
       </footer>
     <script>
-        const API_BASE_URL = "http://localhost:5000"; // Adjust as needed
+         const API_BASE_URL = "http://localhost:5000"; // Adjust as needed
 
         // Define route handlers in a single file for demonstration
         const routes = {
@@ -848,466 +965,507 @@
             const product = cart.find(item => item.id == productId);
             if(product){
                 product.qty = parseInt(qty, 10);
-              }
-
-displayShoppingCartPage();
-}
-
-
-// Function to handle carousel movement
-function moveCarousel(carouselId, direction) {
-const carousel = document.getElementById(carouselId);
-const carouselItems = carousel.querySelector(".carousel-items");
-const items = carouselItems.querySelectorAll(".carousel-item");
-const itemWidth = items[0].offsetWidth;
-const visibleItems = Math.round(carousel.offsetWidth / itemWidth);
-
- let currentPosition = parseInt(getComputedStyle(carouselItems).transform.split(',')[4]) || 0;
-if(direction === 'next'){
-    if(currentPosition > -itemWidth * (items.length - visibleItems)){
-      currentPosition -= itemWidth;
-     } else {
-           currentPosition = 0
-     }
-} else {
-if (currentPosition < 0 ) {
-    currentPosition += itemWidth;
- } else {
-      currentPosition = -itemWidth * (items.length - visibleItems)
-}
-}
- carouselItems.style.transform = `translateX(${currentPosition}px)`
-}
-// Route handlers for pages, will load HTML into the content-area
-function displayHomePage() {
-document.getElementById("content-area").innerHTML = `
-  <div class="hero-section">
-     <img src="https://placehold.co/1200x400" alt="Hero Image"/>
-     <div class="overlay-text">
-       <h2>Have A Hard Year</h2>
-        <p>This is text description or paragraph here.</p>
-        <p class="kobe">Kobe</p>
-     </div>
-  </div>
-   <div class="trending-section">
-    <h2>Trending</h2>
-       <div class="trending-items">
-         <div class="trending-item">
-             <img src="https://placehold.co/400x300" alt="Trend 1"/>
-         </div>
-         <div class="trending-item">
-             <img src="https://placehold.co/400x300" alt="Trend 2"/>
-         </div>
-        <div class="trending-item">
-              <img src="https://placehold.co/400x300" alt="Trend 3"/>
-        </div>
-      </div>
-  </div>
-   <div class="classics-spotlight">
-      <h2>Classics Spotlight</h2>
-       <div class="carousel" id="classics-carousel">
-          <div class="carousel-items">
-               <div class="carousel-item">
-                   <img src="https://placehold.co/250x150" alt="Shoe 1">
-                   <h3>Air Max 1</h3>
-               </div>
-                <div class="carousel-item">
-                   <img src="https://placehold.co/250x150" alt="Shoe 2">
-                   <h3>Air Max DN</h3>
-               </div>
-               <div class="carousel-item">
-                    <img src="https://placehold.co/250x150" alt="Shoe 3">
-                   <h3>Air Max 90</h3>
-                </div>
-               <div class="carousel-item">
-                    <img src="https://placehold.co/250x150" alt="Shoe 4">
-                    <h3>Cortez</h3>
-                </div>
-               <div class="carousel-item">
-                    <img src="https://placehold.co/250x150" alt="Shoe 5">
-                    <h3>Killshot</h3>
-                </div>
-               <div class="carousel-item">
-                    <img src="https://placehold.co/250x150" alt="Shoe 6">
-                   <h3>Pegasus 41</h3>
-               </div>
-                 <div class="carousel-item">
-                    <img src="https://placehold.co/250x150" alt="Shoe 7">
-                   <h3>Vomero</h3>
-                </div>
-          </div>
-           <div class="carousel-control carousel-prev" onclick="moveCarousel('classics-carousel', 'prev')">❮</div>
-            <div class="carousel-control carousel-next" onclick="moveCarousel('classics-carousel', 'next')">❯</div>
-     </div>
-  </div>
-  <div class="dont-miss">
-     <img src="https://placehold.co/1200x300" alt="Don't Miss Video"/>
-      <div class="overlay-text">
-          <h2>Built To Be Different</h2>
-           <p>Unleash your explosive game with more stability and new Air cushioning.</p>
-      </div>
-  </div>
-   <div class="shop-by-sport">
-      <h2>Shop By Sport</h2>
-         <div class="sport-carousel" id="sport-carousel">
-            <div class="sport-carousel-items">
-                 <div class="sport-carousel-item">
-                     <img src="https://placehold.co/300x200" alt="Running"/>
-                      <h3>Running</h3>
-                 </div>
-                 <div class="sport-carousel-item">
-                     <img src="https://placehold.co/300x200" alt="Football"/>
-                     <h3>Football</h3>
-               </div>
-                 <div class="sport-carousel-item">
-                     <img src="https://placehold.co/300x200" alt="Basketball"/>
-                      <h3>Basketball</h3>
-                </div>
-             </div>
-             <div class="carousel-control carousel-prev" onclick="moveCarousel('sport-carousel', 'prev')">❮</div>
-            <div class="carousel-control carousel-next" onclick="moveCarousel('sport-carousel', 'next')">❯</div>
-       </div>
-   </div>
- <div class="member-benefits">
-    <h2>Member Benefits</h2>
-       <div class="member-items">
-         <div class="member-item">
-             <img src="https://placehold.co/400x300" alt="Member Benefit 1"/>
-              <div class="overlay-text">
-                <h3>Member Product</h3>
-                 <p>Your Exclusive Access</p>
-             </div>
-         </div>
-         <div class="member-item">
-             <img src="https://placehold.co/400x300" alt="Member Benefit 2"/>
-            <div class="overlay-text">
-                <h3>Nike By You</h3>
-                 <p>Your Customisation Service</p>
-              </div>
-         </div>
-        <div class="member-item">
-              <img src="https://placehold.co/400x300" alt="Member Benefit 3"/>
-               <div class="overlay-text">
-                <h3>Member Rewards</h3>
-                <p>How We Say Thank You</p>
-             </div>
-        </div>
-      </div>
-  </div>
-<br>
- <h2>Our Products</h2>
-<div class="products">
-    <div class="product-card">
-      <img src="https://placehold.co/300x200/007bff/ffffff" alt="Shoe 1">
-      <h3>Running Shoe</h3>
-      <p>$100.00</p>
-      <button onclick="addToCart(1)">Add to Cart</button>
-      <a style="display:block; text-decoration: underline; margin-top: 5px;" onclick="changePage('/product/1')">View Details</a>
-    </div>
-    <div class="product-card">
-      <img src="https://placehold.co/300x200/28a745/ffffff" alt="Shoe 2">
-      <h3>Basketball Shoe</h3>
-      <p>$120.00</p>
-       <button onclick="addToCart(2)">Add to Cart</button>
-        <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/2')">View Details</a>
-    </div>
-    <div class="product-card">
-      <img src="https://placehold.co/300x200/dc3545/ffffff" alt="Shoe 3">
-      <h3>Training Shoe</h3>
-      <p>$150.00</p>
-        <button onclick="addToCart(3)">Add to Cart</button>
-          <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/3')">View Details</a>
-    </div>
-    <div class="product-card">
-      <img src="https://placehold.co/300x200/ffc107/ffffff" alt="Apparel 1">
-      <h3>Running Shirt</h3>
-      <p>$60.00</p>
-        <button onclick="addToCart(4)">Add to Cart</button>
-          <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/4')">View Details</a>
-     </div>
-      <div class="product-card">
-      <img src="https://placehold.co/300x200/17a2b8/ffffff" alt="Apparel 2">
-      <h3>Training Shorts</h3>
-      <p>$40.00</p>
-        <button onclick="addToCart(5)">Add to Cart</button>
-          <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/5')">View Details</a>
-     </div>
-
-</div>
-`;
-}
-
-function displayProductsPage() {
-document.getElementById("content-area").innerHTML = `
-<h2>Our Products</h2>
-<div class="products">
-    <div class="product-card">
-      <img src="https://placehold.co/300x200/007bff/ffffff" alt="Shoe 1">
-      <h3>Running Shoe</h3>
-      <p>$100.00</p>
-      <button onclick="addToCart(1)">Add to Cart</button>
-      <a style="display:block; text-decoration: underline; margin-top: 5px;" onclick="changePage('/product/1')">View Details</a>
-    </div>
-    <div class="product-card">
-      <img src="https://placehold.co/300x200/28a745/ffffff" alt="Shoe 2">
-      <h3>Basketball Shoe</h3>
-      <p>$120.00</p>
-       <button onclick="addToCart(2)">Add to Cart</button>
-        <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/2')">View Details</a>
-    </div>
-    <div class="product-card">
-      <img src="https://placehold.co/300x200/dc3545/ffffff" alt="Shoe 3">
-      <h3>Training Shoe</h3>
-      <p>$150.00</p>
-        <button onclick="addToCart(3)">Add to Cart</button>
-          <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/3')">View Details</a>
-    </div>
-    <div class="product-card">
-      <img src="https://placehold.co/300x200/ffc107/ffffff" alt="Apparel 1">
-      <h3>Running Shirt</h3>
-      <p>$60.00</p>
-        <button onclick="addToCart(4)">Add to Cart</button>
-          <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/4')">View Details</a>
-     </div>
-      <div class="product-card">
-      <img src="https://placehold.co/300x200/17a2b8/ffffff" alt="Apparel 2">
-      <h3>Training Shorts</h3>
-      <p>$40.00</p>
-        <button onclick="addToCart(5)">Add to Cart</button>
-          <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/5')">View Details</a>
-     </div>
-
-</div>
-`;
-}
-
-function displayProductDetailsPage(productId) {
-document.getElementById("content-area").innerHTML = `
-<div class="product-details">
-    <h2>Product Details</h2>
-     <img src="https://placehold.co/400x300" alt="Product Image">
-    <h2>Product ${productId}</h2>
-    <p>This is the detailed description of product with ID ${productId}.  This can include sizes, materials etc. For demo purposes, just a placeholder.</p>
-     <p><b>Price: $${(Math.random() * 100 + 20).toFixed(2)}</b></p>
-    <button onclick="addToCart(${productId})">Add to Cart</button>
-    <br><br><button onclick="changePage('/products')">Back to Products</button>
-</div>
-`;
-}
-
-function displayShoppingCartPage() {
-let cartItemsHtml = "";
-let total = 0;
-if (cart.length > 0) {
-    cart.forEach(item => {
-        const subtotal = item.price * item.qty;
-        total += subtotal;
-
-        cartItemsHtml += `
-        <li>
-            <span>${item.name}</span>
-            <span>$${item.price.toFixed(2)}</span>
-            <input type="number" value="${item.qty}" min="1" onchange="updateQuantity(${item.id}, this.value)"/>
-             <span>Subtotal: $${subtotal.toFixed(2)}</span>
-            <button onclick="removeFromCart(${item.id})">Remove</button>
-
-        </li>
-    `;
-    });
-
-    cartItemsHtml += `<p><b>Total: $${total.toFixed(2)}</b></p>`
-
-    cartItemsHtml += `<button onclick="changePage('/checkout')">Proceed to Checkout</button>`
-} else {
-    cartItemsHtml = "<p>Your cart is empty.</p>";
-}
-document.getElementById("content-area").innerHTML = `
-<h2>Shopping Cart</h2>
-<ul class="cart-items">
-   ${cartItemsHtml}
-</ul>
-  <br><br><button onclick="changePage('/products')">Continue Shopping</button>
-`;
-}
-
-function displayProfilePage(){
-   if(user){
-        document.getElementById("content-area").innerHTML = `
-             <h2>User Profile</h2>
-             <p><b>Username:</b> ${user.username}</p>
-               <p><b>Email:</b> ${user.email || 'Not provided'}</p>
-               <br><button onclick="changePage('/')">Back To Home</button>
-             `;
-    } else {
-          document.getElementById("content-area").innerHTML = `
-               <h2>Not logged in</h2>
-              <button onclick="changePage('/login')">Login</button>
-              `
-    }
-}
-
-function displayCheckoutPage() {
-document.getElementById("content-area").innerHTML = `
-<h2>Checkout</h2>
-<form id="checkout-form">
-   <div class="form-group">
-     <label for="name">Name:</label>
-    <input type="text" id="name" required>
-   </div>
-   <div class="form-group">
-     <label for="email">Email:</label>
-     <input type="email" id="email" required>
-   </div>
-   <div class="form-group">
-     <label for="address">Address:</label>
-    <textarea id="address" required></textarea>
-  </div>
-    <button onclick="submitCheckout()">Place Order</button>
-</form>
-  <br><br><button onclick="changePage('/cart')">Back to Cart</button>
-`;
-}
-
-function displayLoginPage() {
-document.getElementById("content-area").innerHTML = `
-    <h2>Login</h2>
-    <form id="login-form">
-      <div class="form-group">
-          <label for="username">Username:</label>
-          <input type="text" id="username" required>
-             <span id="username-error" class="error-message"></span>
-      </div>
-        <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" required>
-        <span id="password-error" class="error-message"></span>
-        </div>
-        <button type="button" onclick="submitLogin()">Login</button>
-    </form>
-       <br>
-    <button onclick="changePage('/register')">Register</button>
-`;
-}
-
-function displayRegisterPage() {
-document.getElementById("content-area").innerHTML = `
-    <h2>Register</h2>
-    <form id="register-form">
-    <div class="form-group">
-        <label for="new-username">Username:</label>
-        <input type="text" id="new-username" required>
-        <span id="new-username-error" class="error-message"></span>
-     </div>
-    <div class="form-group">
-       <label for="new-password">Password:</label>
-       <input type="password" id="new-password" required>
-        <span id="new-password-error" class="error-message"></span>
-    </div>
-     <div class="form-group">
-       <label for="email">Email:</label>
-      <input type="email" id="email" required>
-         <span id="email-error" class="error-message"></span>
-    </div>
-
-    <button type="button" onclick="submitRegister()">Register</button>
-    </form>
-    <br>
-    <button onclick="changePage('/login')">Back to Login</button>
-`;
-}
-
-
-// Simulated form submissions
-function submitCheckout(){
-const name = document.getElementById('name').value;
-const email = document.getElementById('email').value;
-const address = document.getElementById('address').value;
-
-showNotification(`Checkout Completed!`);
-cart = [];
-changePage('/')
-}
-
-
-async function submitLogin() {
-const username = document.getElementById('username').value;
-const password = document.getElementById('password').value;
- const usernameError = document.getElementById("username-error");
-const passwordError = document.getElementById("password-error");
- usernameError.textContent = "";
- passwordError.textContent = "";
-try{
-   const response = await fetch(`${API_BASE_URL}/login`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({username, password}),
-    });
-    const data = await response.json();
-    if(response.ok) {
-         user = {username};
-         showNotification("Login Successful!");
-        changePage('/');
-
-    } else {
-        if(data && data.message){
-            usernameError.textContent = data.message;
-            passwordError.textContent = data.message;
-        }
-        console.log("Error login ", data);
-    }
-} catch(err){
-    console.log("Error during login", err);
-}
-}
-
-async function submitRegister() {
-const newUsername = document.getElementById('new-username').value;
-const newPassword = document.getElementById('new-password').value;
-const email = document.getElementById('email').value;
-
- const usernameError = document.getElementById("new-username-error");
- const passwordError = document.getElementById("new-password-error");
-  const emailError = document.getElementById("email-error");
-
-usernameError.textContent = "";
-passwordError.textContent ="";
- emailError.textContent = "";
-
-
-try{
-      const response = await fetch(`${API_BASE_URL}/register`, {
-            method: "POST",
-            headers: {
-            "Content-Type": "application/json",
-            },
-            body: JSON.stringify({username: newUsername, password: newPassword, email}),
-        });
-
-         const data = await response.json();
-
-         if(response.ok) {
-           user = {username: newUsername, email};
-           showNotification("Registration Successful!");
-             changePage('/');
-         } else {
-            if(data && data.message){
-                usernameError.textContent = data.message;
-                passwordError.textContent = data.message;
-                 emailError.textContent = data.message;
             }
-            console.log("Error registering ", data);
-         }
-} catch(err) {
-    console.log("Error during registration", err);
-}
-}
 
-// Initial page load
-window.addEventListener('load', () => loadPage());
-window.addEventListener("popstate", loadPage);
+            displayShoppingCartPage();
+        }
 
-</script>
+
+        // Function to handle carousel movement
+       function moveCarousel(carouselId, direction) {
+            const carousel = document.getElementById(carouselId);
+            const carouselItems = carousel.querySelector(".carousel-items");
+            const items = carouselItems.querySelectorAll(".carousel-item");
+            const itemWidth = items[0].offsetWidth;
+            const visibleItems = Math.round(carousel.offsetWidth / itemWidth);
+
+             let currentPosition = parseInt(getComputedStyle(carouselItems).transform.split(',')[4]) || 0;
+           if(direction === 'next'){
+                if(currentPosition > -itemWidth * (items.length - visibleItems)){
+                  currentPosition -= itemWidth;
+                 } else {
+                       currentPosition = 0
+                 }
+           } else {
+            if (currentPosition < 0 ) {
+                currentPosition += itemWidth;
+             } else {
+                  currentPosition = -itemWidth * (items.length - visibleItems)
+            }
+        }
+             carouselItems.style.transform = `translateX(${currentPosition}px)`
+        }
+       // Route handlers for pages, will load HTML into the content-area
+        function displayHomePage() {
+          document.getElementById("content-area").innerHTML = `
+              <div class="hero-section">
+                 <img src="https://placehold.co/1200x400" alt="Hero Image"/>
+                 <div class="overlay-text">
+                   <h2>Have A Hard Year</h2>
+                    <p>This is text description or paragraph here.</p>
+                    <p class="kobe">Kobe</p>
+                 </div>
+              </div>
+               <div class="trending-section">
+                <h2>Trending</h2>
+                   <div class="trending-items">
+                     <div class="trending-item">
+                         <img src="https://placehold.co/400x300" alt="Trend 1"/>
+                     </div>
+                     <div class="trending-item">
+                         <img src="https://placehold.co/400x300" alt="Trend 2"/>
+                     </div>
+                    <div class="trending-item">
+                          <img src="https://placehold.co/400x300" alt="Trend 3"/>
+                    </div>
+                  </div>
+              </div>
+               <div class="classics-spotlight">
+                  <h2>Classics Spotlight</h2>
+                   <div class="carousel" id="classics-carousel">
+                      <div class="carousel-items">
+                           <div class="carousel-item">
+                               <img src="https://placehold.co/250x150" alt="Shoe 1">
+                               <h3>Air Max 1</h3>
+                           </div>
+                            <div class="carousel-item">
+                               <img src="https://placehold.co/250x150" alt="Shoe 2">
+                               <h3>Air Max DN</h3>
+                           </div>
+                           <div class="carousel-item">
+                                <img src="https://placehold.co/250x150" alt="Shoe 3">
+                               <h3>Air Max 90</h3>
+                            </div>
+                           <div class="carousel-item">
+                                <img src="https://placehold.co/250x150" alt="Shoe 4">
+                                <h3>Cortez</h3>
+                            </div>
+                           <div class="carousel-item">
+                                <img src="https://placehold.co/250x150" alt="Shoe 5">
+                                <h3>Killshot</h3>
+                            </div>
+                           <div class="carousel-item">
+                                <img src="https://placehold.co/250x150" alt="Shoe 6">
+                               <h3>Pegasus 41</h3>
+                           </div>
+                             <div class="carousel-item">
+                                <img src="https://placehold.co/250x150" alt="Shoe 7">
+                               <h3>Vomero</h3>
+                            </div>
+                      </div>
+                       <div class="carousel-control carousel-prev" onclick="moveCarousel('classics-carousel', 'prev')">❮</div>
+                        <div class="carousel-control carousel-next" onclick="moveCarousel('classics-carousel', 'next')">❯</div>
+                 </div>
+              </div>
+              <div class="dont-miss">
+                 <img src="https://placehold.co/1200x300" alt="Don't Miss Video"/>
+                  <div class="overlay-text">
+                      <h2>Built To Be Different</h2>
+                       <p>Unleash your explosive game with more stability and new Air cushioning.</p>
+                  </div>
+              </div>
+               <div class="shop-by-sport">
+                  <h2>Shop By Sport</h2>
+                     <div class="sport-carousel" id="sport-carousel">
+                        <div class="sport-carousel-items">
+                             <div class="sport-carousel-item">
+                                 <img src="https://placehold.co/300x200" alt="Running"/>
+                                  <h3>Running</h3>
+                             </div>
+                             <div class="sport-carousel-item">
+                                 <img src="https://placehold.co/300x200" alt="Football"/>
+                                 <h3>Football</h3>
+                           </div>
+                             <div class="sport-carousel-item">
+                                 <img src="https://placehold.co/300x200" alt="Basketball"/>
+                                  <h3>Basketball</h3>
+                            </div>
+                         </div>
+                         <div class="carousel-control carousel-prev" onclick="moveCarousel('sport-carousel', 'prev')">❮</div>
+                        <div class="carousel-control carousel-next" onclick="moveCarousel('sport-carousel', 'next')">❯</div>
+                   </div>
+               </div>
+             <div class="member-benefits">
+                <h2>Member Benefits</h2>
+                   <div class="member-items">
+                     <div class="member-item">
+                         <img src="https://placehold.co/400x300" alt="Member Benefit 1"/>
+                          <div class="overlay-text">
+                            <h3>Member Product</h3>
+                             <p>Your Exclusive Access</p>
+                         </div>
+                     </div>
+                     <div class="member-item">
+                         <img src="https://placehold.co/400x300" alt="Member Benefit 2"/>
+                        <div class="overlay-text">
+                            <h3>Nike By You</h3>
+                             <p>Your Customisation Service</p>
+                          </div>
+                     </div>
+                    <div class="member-item">
+                          <img src="https://placehold.co/400x300" alt="Member Benefit 3"/>
+                           <div class="overlay-text">
+                            <h3>Member Rewards</h3>
+                            <p>How We Say Thank You</p>
+                         </div>
+                    </div>
+                  </div>
+              </div>
+           <br>
+             <h2>Our Products</h2>
+            <div class="products">
+                <div class="product-card">
+                  <img src="https://placehold.co/300x200/007bff/ffffff" alt="Shoe 1">
+                  <h3>Running Shoe</h3>
+                  <p>$100.00</p>
+                  <button onclick="addToCart(1)">Add to Cart</button>
+                  <a style="display:block; text-decoration: underline; margin-top: 5px;" onclick="changePage('/product/1')">View Details</a>
+                </div>
+                <div class="product-card">
+                  <img src="https://placehold.co/300x200/28a745/ffffff" alt="Shoe 2">
+                  <h3>Basketball Shoe</h3>
+                  <p>$120.00</p>
+                   <button onclick="addToCart(2)">Add to Cart</button>
+                    <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/2')">View Details</a>
+                </div>
+                <div class="product-card">
+                  <img src="https://placehold.co/300x200/dc3545/ffffff" alt="Shoe 3">
+                  <h3>Training Shoe</h3>
+                  <p>$150.00</p>
+                    <button onclick="addToCart(3)">Add to Cart</button>
+                      <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/3')">View Details</a>
+                </div>
+                <div class="product-card">
+                  <img src="https://placehold.co/300x200/ffc107/ffffff" alt="Apparel 1">
+                  <h3>Running Shirt</h3>
+                  <p>$60.00</p>
+                    <button onclick="addToCart(4)">Add to Cart</button>
+                      <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/4')">View Details</a>
+                 </div>
+                  <div class="product-card">
+                  <img src="https://placehold.co/300x200/17a2b8/ffffff" alt="Apparel 2">
+                  <h3>Training Shorts</h3>
+                  <p>$40.00</p>
+                    <button onclick="addToCart(5)">Add to Cart</button>
+                      <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/5')">View Details</a>
+                 </div>
+
+            </div>
+          `;
+        }
+
+        function displayProductsPage() {
+           document.getElementById("content-area").innerHTML = `
+            <h2>Our Products</h2>
+            <div class="products">
+                <div class="product-card">
+                  <img src="https://placehold.co/300x200/007bff/ffffff" alt="Shoe 1">
+                  <h3>Running Shoe</h3>
+                  <p>$100.00</p>
+                  <button onclick="addToCart(1)">Add to Cart</button>
+                  <a style="display:block; text-decoration: underline; margin-top: 5px;" onclick="changePage('/product/1')">View Details</a>
+                </div>
+                <div class="product-card">
+                  <img src="https://placehold.co/300x200/28a745/ffffff" alt="Shoe 2">
+                  <h3>Basketball Shoe</h3>
+                  <p>$120.00</p>
+                   <button onclick="addToCart(2)">Add to Cart</button>
+                    <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/2')">View Details</a>
+                </div>
+                <div class="product-card">
+                  <img src="https://placehold.co/300x200/dc3545/ffffff" alt="Shoe 3">
+                  <h3>Training Shoe</h3>
+                  <p>$150.00</p>
+                    <button onclick="addToCart(3)">Add to Cart</button>
+                      <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/3')">View Details</a>
+                </div>
+                <div class="product-card">
+                  <img src="https://placehold.co/300x200/ffc107/ffffff" alt="Apparel 1">
+                  <h3>Running Shirt</h3>
+                  <p>$60.00</p>
+                    <button onclick="addToCart(4)">Add to Cart</button>
+                      <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/4')">View Details</a>
+                 </div>
+                  <div class="product-card">
+                  <img src="https://placehold.co/300x200/17a2b8/ffffff" alt="Apparel 2">
+                  <h3>Training Shorts</h3>
+                  <p>$40.00</p>
+                    <button onclick="addToCart(5)">Add to Cart</button>
+                      <a style="display:block; text-decoration: underline; margin-top: 5px;"  onclick="changePage('/product/5')">View Details</a>
+                 </div>
+
+            </div>
+          `;
+        }
+
+        function displayProductDetailsPage(productId) {
+           document.getElementById("content-area").innerHTML = `
+            <div class="product-details">
+                <h2>Product Details</h2>
+                 <img src="https://placehold.co/400x300" alt="Product Image">
+                <h2>Product ${productId}</h2>
+                <p>This is the detailed description of product with ID ${productId}.  This can include sizes, materials etc. For demo purposes, just a placeholder.</p>
+                 <p><b>Price: $${(Math.random() * 100 + 20).toFixed(2)}</b></p>
+                <button onclick="addToCart(${productId})">Add to Cart</button>
+                <br><br><button onclick="changePage('/products')">Back to Products</button>
+            </div>
+          `;
+        }
+
+         function displayShoppingCartPage() {
+              let cartItemsHtml = "";
+            let total = 0;
+            let subtotal = 0;
+
+               if (cart.length > 0) {
+                cart.forEach(item => {
+                  const itemSubtotal = item.price * item.qty;
+                  subtotal += itemSubtotal;
+                  cartItemsHtml += `
+                    <li>
+                        <span>${item.name}</span>
+                        <span>$${item.price.toFixed(2)}</span>
+                        <input type="number" value="${item.qty}" min="1" onchange="updateQuantity(${item.id}, this.value)"/>
+                        <span>Subtotal: $${itemSubtotal.toFixed(2)}</span>
+                        <button onclick="removeFromCart(${item.id})">Remove</button>
+                    </li>
+                `;
+            });
+                  total = subtotal;
+
+               } else {
+               cartItemsHtml = "<p>Your cart is empty.</p>";
+            }
+         document.getElementById("content-area").innerHTML = `
+           <div class="cart-page">
+                 <h2>Bag</h2>
+                <div class="cart-section">
+                        <div class="cart-items-container">
+                        <ul class="cart-items">
+                           ${cartItemsHtml}
+                        </ul>
+                        </div>
+                           <div class="cart-summary-container">
+                             <h2>Summary</h2>
+                                   <p><span>Subtotal</span> <span>$${subtotal.toFixed(2)}</span></p>
+                                    <p><span>Estimated Delivery & Handling</span> <span>Free</span></p>
+                                        <p class="total"><span>Total</span> <span>$${total.toFixed(2)}</span></p>
+                                    <button onclick="changePage('/checkout')">Guest Checkout</button>
+                                     <button onclick="changePage('/checkout')">Member Checkout</button>
+                           </div>
+
+                </div>
+                     <div class="you-might-like">
+                           <h2>You Might Also Like</h2>
+                          <div class="carousel" id="cart-carousel">
+                      <div class="carousel-items">
+                           <div class="carousel-item">
+                               <img src="https://placehold.co/250x150" alt="Shoe 1">
+                               <h3>Nike Jr. Mercurial Vapor 16 Club</h3>
+                            <p>Younger Kids' MG Low-Top Football Boot</p>
+                            <p><b>MRP : ₹ 3 695.00</b></p>
+                           </div>
+                            <div class="carousel-item">
+                               <img src="https://placehold.co/250x150" alt="Shoe 2">
+                                <h3>Nike Run Swift 3</h3>
+                                 <p>Men's Road Running Shoes</p>
+                             <p><b> ₹ 5 977.00 <br> MRP :  ₹ 6 295.00</b></p>
+                           </div>
+                           <div class="carousel-item">
+                                <img src="https://placehold.co/250x150" alt="Shoe 3">
+                               <h3>Nike Dunk Low Retro</h3>
+                                <p>Men's Shoes</p>
+                                 <p><b>MRP : ₹ 8 695.00</b></p>
+                            </div>
+                     </div>
+                       <div class="carousel-control carousel-prev" onclick="moveCarousel('cart-carousel', 'prev')">❮</div>
+                        <div class="carousel-control carousel-next" onclick="moveCarousel('cart-carousel', 'next')">❯</div>
+                 </div>
+                      </div>
+              <br><br><button onclick="changePage('/products')">Continue Shopping</button>
+          </div>
+        `;
+        }
+
+          function displayProfilePage(){
+               if(user){
+                    document.getElementById("content-area").innerHTML = `
+                         <h2>User Profile</h2>
+                         <p><b>Username:</b> ${user.username}</p>
+                           <p><b>Email:</b> ${user.email || 'Not provided'}</p>
+                           <br><button onclick="changePage('/')">Back To Home</button>
+                         `;
+                } else {
+                      document.getElementById("content-area").innerHTML = `
+                           <h2>Not logged in</h2>
+                          <button onclick="changePage('/login')">Login</button>
+                          `
+                }
+          }
+
+        function displayCheckoutPage() {
+           document.getElementById("content-area").innerHTML = `
+            <h2>Checkout</h2>
+            <form id="checkout-form">
+               <div class="form-group">
+                 <label for="name">Name:</label>
+                <input type="text" id="name" required>
+               </div>
+               <div class="form-group">
+                 <label for="email">Email:</label>
+                 <input type="email" id="email" required>
+               </div>
+               <div class="form-group">
+                 <label for="address">Address:</label>
+                <textarea id="address" required></textarea>
+              </div>
+                <button onclick="submitCheckout()">Place Order</button>
+            </form>
+              <br><br><button onclick="changePage('/cart')">Back to Cart</button>
+          `;
+        }
+
+         function displayLoginPage() {
+            document.getElementById("content-area").innerHTML = `
+             <div class="auth-page">
+                 <form id="login-form">
+                  <h2>Login</h2>
+                  <div class="form-group">
+                      <label for="username">Username:</label>
+                      <input type="text" id="username" required>
+                         <span id="username-error" class="error-message"></span>
+                  </div>
+                    <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" required>
+                    <span id="password-error" class="error-message"></span>
+                    </div>
+                    <button type="button" onclick="submitLogin()">Login</button>
+                       <p>Not a member ? <a onclick="changePage('/register')" style="text-decoration: underline;cursor:pointer;">Register</a></p>
+                </form>
+               </div>
+            `;
+        }
+
+         function displayRegisterPage() {
+            document.getElementById("content-area").innerHTML = `
+                 <div class="auth-page">
+                      <form id="register-form">
+                       <h2>Register</h2>
+                        <div class="form-group">
+                           <label for="new-username">Username:</label>
+                            <input type="text" id="new-username" required>
+                           <span id="new-username-error" class="error-message"></span>
+                           </div>
+                            <div class="form-group">
+                            <label for="new-password">Password:</label>
+                             <input type="password" id="new-password" required>
+                           <span id="new-password-error" class="error-message"></span>
+                        </div>
+                       <div class="form-group">
+                       <label for="email">Email:</label>
+                        <input type="email" id="email" required>
+                       <span id="email-error" class="error-message"></span>
+                        </div>
+                            <button type="button" onclick="submitRegister()">Register</button>
+                         <p>Already a member ? <a onclick="changePage('/login')" style="text-decoration: underline;cursor:pointer;">Login</a></p>
+                   </form>
+                </div>
+            `;
+        }
+
+
+    // Simulated form submissions
+    function submitCheckout(){
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const address = document.getElementById('address').value;
+
+         showNotification(`Checkout Completed!`);
+        cart = [];
+        changePage('/')
+    }
+
+
+      async function submitLogin() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+             const usernameError = document.getElementById("username-error");
+            const passwordError = document.getElementById("password-error");
+             usernameError.textContent = "";
+             passwordError.textContent = "";
+            try{
+               const response = await fetch(`${API_BASE_URL}/login`, {
+                    method: "POST",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({username, password}),
+                });
+                const data = await response.json();
+                if(response.ok) {
+                     user = {username};
+                     showNotification("Login Successful!");
+                    changePage('/');
+
+                } else {
+                    if(data && data.message){
+                        usernameError.textContent = data.message;
+                        passwordError.textContent = data.message;
+                    }
+                    console.log("Error login ", data);
+                }
+            } catch(err){
+                console.log("Error during login", err);
+            }
+        }
+
+       async function submitRegister() {
+            const newUsername = document.getElementById('new-username').value;
+            const newPassword = document.getElementById('new-password').value;
+            const email = document.getElementById('email').value;
+
+             const usernameError = document.getElementById("new-username-error");
+             const passwordError = document.getElementById("new-password-error");
+              const emailError = document.getElementById("email-error");
+
+            usernameError.textContent = "";
+            passwordError.textContent ="";
+             emailError.textContent = "";
+
+
+            try{
+                  const response = await fetch(`${API_BASE_URL}/register`, {
+                        method: "POST",
+                        headers: {
+                        "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({username: newUsername, password: newPassword, email}),
+                    });
+
+                     const data = await response.json();
+
+                     if(response.ok) {
+                       user = {username: newUsername, email};
+                       showNotification("Registration Successful!");
+                         changePage('/');
+                     } else {
+                        if(data && data.message){
+                            usernameError.textContent = data.message;
+                            passwordError.textContent = data.message;
+                             emailError.textContent = data.message;
+                        }
+                        console.log("Error registering ", data);
+                     }
+            } catch(err) {
+                console.log("Error during registration", err);
+            }
+        }
+
+    // Initial page load
+    window.addEventListener('load', () => loadPage());
+    window.addEventListener("popstate", loadPage);
+
+     </script>
 </body>
 </html>
